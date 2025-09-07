@@ -1,0 +1,63 @@
+Builder Design Pattern
+----------------------
+Creational Design Pattern
+    It is used to create a complex object.
+    If there is large no. of attribute in
+    a class and you want to create an object.
+
+Person
+      FistName, LastName, Age, Gender, Phone.
+
+
+
+      Suppose we are creating an immutable object
+      of the person of the class which means, we will not change the
+      object of the state after object creation.
+
+      Now,
+
+      Suppose we have FirstName and LastName are mandatory
+      and all other field are not mandatory.
+
+      Suppose created a set of constructor.
+
+      Now in future, if we will add more attribute in the class
+      then we have to add more constructor.
+
+      This approach is not good for long term project.
+
+      Builder Design Pattern is the solution of this problem.
+
+        Steps to Create a Builder Design Pattern
+            1. Create a static nested inner class  = Builder class
+            2. The builder class copies all the properties from the outer class to the builder class.
+                Person -> PersonBuilder
+            3. Buidler class contains
+                1. Public constructor with only required attribute.
+                2. will contains some setter for optional attributes and it will return the same builder object.
+                3. Have Build Method , return the object needed by the client programs.
+                4. we need to have a private constructor in the Class with Builder class as an argument.
+
+Advantage of Builder Pattern
+
+Flexible and code is more maintainable.
+maintains the immutability of the object.
+
+
+Disadvantage
+Increase the number of line of code.
+We have to create a BuilderClass for each different type of Product.
+
+
+Example and Testing....
+
+
+
+
+
+
+
+
+
+
+

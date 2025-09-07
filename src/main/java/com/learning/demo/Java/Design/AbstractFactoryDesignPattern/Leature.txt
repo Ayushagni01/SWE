@@ -1,0 +1,43 @@
+Abstract Factory Design Pattern
+--------------------------------
+
+creational Design Pattern
+Provide an interface to create a families of related or
+dependent object.
+
+
+Game
+    Different Level
+        each level consists set of enemies, weapons and power-ups.
+You can use of Abstract Factory that create these objects amd
+then create a concrete implementations.
+
+This allows you to switch between levels easily
+without having to worry about the specific implementations
+details of each objects.
+
+Factory Pattern is used to create a single type of object
+Abstract Factory is used to create families of related and
+independent objects.
+
+Examples
+Scenario:
+You are designing a UI toolkit that should
+work on two operating systems:
+
+Windows, Mac
+
+Each OS has its own style of:ßßßß
+Button
+Checkbox
+
+👉 Implement an Abstract Factory Pattern so that:
+
+WindowsFactory creates WindowsButton + WindowsCheckbox
+
+MacFactory creates MacButton + MacCheckbox
+
+This ensures that the UI components always match the OS style.
+
+
+

@@ -1,0 +1,9 @@
+spring:
+  banner:
+    location: classpath:image/banner.txt
+  application:
+    name: Ayush-SpringBoot-Project
+
+
+server:
+  port: 8090
