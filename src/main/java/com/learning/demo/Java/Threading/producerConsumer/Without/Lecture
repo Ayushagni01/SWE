@@ -1,0 +1,30 @@
+                 ┌───────────────┐
+                 │   Producer    │
+                 └───────┬───────┘
+                         │
+                         ▼
+                 [ Check buffer ]
+                ┌─────────┴─────────┐
+        Buffer Full?                Buffer Has Space?
+         │                                │
+         ▼                                ▼
+    wait() (block)                 Produce item → add to buffer
+         │                                │
+         │                                ▼
+         └────────────── notifyAll() ◄────┘
+                                │
+                                ▼
+                 ┌───────────────┐
+                 │   Consumer    │
+                 └───────┬───────┘
+                         │
+                         ▼
+                 [ Check buffer ]
+                ┌─────────┴─────────┐
+        Buffer Empty?               Buffer Has Items?
+         │                                │
+         ▼                                ▼
+    wait() (block)                 Consume item ← remove from buffer
+         │                                │
+         │                                ▼
+         └────────────── notifyAll() ◄────┘
